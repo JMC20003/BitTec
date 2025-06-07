@@ -1,0 +1,617 @@
+/* css/styles.css */
+
+/* Variables CSS para los colores */
+:root {
+    --color-white: #ffffff;
+    --color-steel-blue: #4682b4; /* Azul Acero */
+    --color-light-beige: #f7e9d3; /* Beige Claro */
+    --color-black: #000000;
+    --color-gray-text: #333333;
+    --color-light-gray-border: #dddddd;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Puedes cambiar por una fuente de Google Fonts */
+    line-height: 1.6;
+    background-color: var(--color-white);
+    color: var(--color-gray-text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Tipografía */
+h1, h2, h3 {
+    color: var(--color-steel-blue);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: var(--color-black); /* Títulos principales en negro para contraste */
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-steel-blue);
+    color: var(--color-white);
+    border: 2px solid var(--color-steel-blue);
+}
+
+.btn-primary:hover {
+    background-color: #3a72a0; /* Un tono un poco más oscuro de --color-steel-blue */
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-steel-blue);
+    border: 2px solid var(--color-steel-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-steel-blue);
+    color: var(--color-white);
+}
+
+/* Header */
+.main-header {
+    background-color: var(--color-white);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-light-gray-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--color-steel-blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el logo y el nombre */
+}
+
+.logo-img {
+    height: 85px; /* Tamaño del logo. Ajusta según tus necesidades */
+    width: auto; /* Mantiene la proporción */
+}
+
+/* Navegación Principal */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex; /* Por defecto, en desktop, se muestra en fila */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin-left: 30px;
+}
+
+.nav-menu a {
+    color: var(--color-gray-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--color-steel-blue);
+}
+
+/* Botón del menú hamburguesa */
+.nav-toggle {
+    display: none; /* Oculto por defecto en desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px; /* Para hacer que el área de clic sea más grande */
+    position: relative;
+    width: 30px; /* Ancho para el icono */
+    height: 20px; /* Altura para el icono */
+    z-index: 1001; /* Asegura que esté por encima de todo */
+}
+
+.hamburger {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-steel-blue);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-steel-blue);
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Animación de la hamburguesa a 'X' */
+.nav-toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+.hero-section {
+    position: relative; /* Necesario para posicionar el video */
+    height: 600px; /* Define la altura de la sección. Ajusta según tus necesidades */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Oculta cualquier parte del video que se desborde */
+    color: var(--color-white); /* Asegura que el texto sea blanco sobre el video */
+    text-align: center;
+    padding: 0 20px; /* Padding para que el contenido no toque los bordes */
+    /* Elimina la propiedad background-image si usas video directamente */
+    background-color: var(--color-black); /* Fondo de respaldo si el video no carga */
+}
+
+/* Estilos para el video de fondo */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%; /* Sigue siendo importante para el tamaño base */
+    min-height: 100%; /* Sigue siendo importante para el tamaño base */
+    width: 100%;   /* Asegura que el ancho sea 100% del contenedor */
+    height: 100%;  /* Asegura que la altura sea 100% del contenedor */
+    z-index: 1; /* Coloca el video detrás del contenido */
+    transform: translate(-50%, -50%); /* Centra el video perfectamente */
+    object-fit:cover; /* <-- ¡Cambio aquí! Hace que el video se estire para llenar el espacio */
+    filter: brightness(60%); /* Reduce el brillo del video */
+}
+
+/* Estilos para el contenido sobre el video */
+.hero-content {
+    position: relative; /* Coloca el contenido encima del video */
+    z-index: 2; /* Asegura que el contenido esté por encima del video */
+    max-width: 900px; /* Limita el ancho del texto para mejor legibilidad */
+}
+
+.hero-section h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: var(--color-white);
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+.hero-section h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: var(--color-white);
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Sections generales */
+section {
+    padding: 80px 0;
+}
+
+.bg-light-beige {
+    background-color: var(--color-light-beige);
+}
+
+/* Services Section */
+.services-section {
+    text-align: center;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-item {
+    background-color: var(--color-white);
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-item .icon {
+    font-size: 3.5em;
+    color: var(--color-steel-blue);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    margin-bottom: 15px;
+    color: var(--color-black);
+}
+
+/* About Section */
+.about-section .about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Para que se adapte en móviles */
+}
+
+.about-section .about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-section .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-section .about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Projects Section */
+.projects-section {
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.project-item {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-item h3 {
+    padding: 20px 20px 10px;
+    color: var(--color-black);
+}
+
+.project-item p {
+    padding: 0 20px 20px;
+    font-size: 0.95em;
+    color: var(--color-gray-text);
+}
+
+.project-item .btn {
+    margin: 0 20px 20px;
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-steel-blue);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-light-gray-border);
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-steel-blue);
+    box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.2);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-steel-blue);
+    margin-bottom: 15px; /* Para móviles */
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links li {
+    margin: 0 15px 10px;
+}
+
+.footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-steel-blue);
+}
+
+.social-media {
+    margin-bottom: 15px; /* Para móviles */
+}
+
+.social-media a {
+    color: var(--color-white);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--color-steel-blue);
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 3em;
+    }
+    .hero-section p {
+        font-size: 1.2em;
+    }
+    .about-section .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-section .about-image {
+        margin-bottom: 30px;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .footer-links {
+        margin-bottom: 20px;
+    }
+    .social-media {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .nav-toggle {
+        display: block; /* Muestra el botón de hamburguesa en móviles */
+    }
+    .nav-menu {
+        display: none; /* Oculta el menú por defecto en móviles */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--color-white);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--color-light-gray-border);
+        padding-bottom: 10px;
+    }
+    .nav-menu.active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+    .nav-menu li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .nav-menu a {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--color-light-beige);
+    }
+    .nav-menu a:hover {
+        background-color: var(--color-light-beige);
+    }
+     .hero-section {
+        height: 500px; /* Ajusta la altura para móviles */
+        /* En móviles, es mejor ocultar el video y usar una imagen para rendimiento */
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url('../images/hero-bg-mobile.jpg') no-repeat center center/cover;
+        background-color: var(--color-black); /* Fondo de respaldo si la imagen falla */
+    }
+    .hero-video {
+        display: none; /* Oculta el video en móviles para mejorar el rendimiento */
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section p {
+        font-size: 1.1em;
+    }
+    .service-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .main-header {
+        padding: 15px 0;
+    }
+    .logo {
+        font-size: 1.5em;
+        gap: 5px; /* Reduce el espacio entre logo e imagen en móviles */
+    }
+    .logo-img {
+        height: 30px; /* Reduce el tamaño de la imagen del logo en pantallas pequeñas */
+    }
+}

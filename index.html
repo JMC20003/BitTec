@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitTec Soluciones - Innovación Tecnológica para tu Negocio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="" class="logo">
+                <img src="images/logo.png" alt="Logo BitTec Soluciones" class="logo-img">
+                BitTec Soluciones
+            </a>
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#acerca-de">Acerca de Nosotros</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="videos/vecteezy_cybersecurity-and-privacy-concepts-to-protect-data-lock_14441862.MOV" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <h1>Cambiamos la forma en que tu empresa se conecta con el futuro</h1>
+                <p>Innovación de negocios y transformación digital a través de la tecnología.</p>
+                <a href="#servicios" class="btn btn-primary">Descubre nuestros servicios</a>
+            </div>
+        </section>
+
+        <section id="servicios" class="services-section">
+            <div class="container">
+                <h2>Nuestros Servicios</h2>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <i class="fas fa-desktop icon"></i>
+                        <h3>Desarrollo Web Personalizado</h3>
+                        <p>Creación de sitios web y aplicaciones a medida, robustas y escalables</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-chart-line icon"></i>
+                        <h3>Análisis de Datos e Inteligencia de Negocio</h3>
+                        <p>Transforma tus datos en decisiones estratégicas y oportunidades de negocio.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-desktop icon"></i>
+                        <h3>Desarrollo de Aplicaciones de Escritorio</h3>
+                        <p>Creacion de aplicaciones de escritorio diseñadas para tu negocio y su crecimiento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="acerca-de" class="about-section bg-light-beige">
+            <div class="container">
+                <h2>Acerca de BitTec Soluciones</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/inicio.jpg" alt="Equipo de BitTec Soluciones">
+                    </div>
+                    <div class="about-text">
+                        <p>🧭 Misión: <br>
+                            Impulsar la transformación digital de las empresas mediante el desarrollo de soluciones tecnológicas innovadoras y personalizadas, que optimicen sus procesos, potencien su crecimiento y conecten su presente con el futuro.</p>
+                        <p>🌄 Visión: <br>
+                            Ser referentes en innovación tecnológica a nivel nacional e internacional, brindando soluciones digitales de alto impacto que transformen la forma en que las organizaciones operan, se comunican y evolucionan en un mundo cada vez más conectado.
+
+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects-section">
+            <div class="container">
+                <h2>Nuestros Proyectos Recientes</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <img src="images/inicio.jpg" alt="Descripción del Proyecto 1">
+                        <h3>Plataforma E-commerce de ropa deportiva</h3>
+                        <p>Desarrollo de una plataforma de comercio electrónico escalable y optimizada</p>
+                        <a href="#" class="btn btn-secondary">Ver detalles</a>
+                    </div>
+                    <div class="project-item">
+                        <img src="images/inicio.jpg" alt="Descripción del Proyecto 2">
+                        <h3>Sistema de Gestión de un Restaurante</h3>
+                        <p>Diseño y desarrollo de un sistema a medida para optimizar procesos internos</p>
+                        <a href="#" class="btn btn-secondary">Ver detalles</a>
+                    </div>
+                    <div class="project-item">
+                        <img src="images/inicio.jpg" alt="Descripción del Proyecto 3">
+                        <h3>Prediccion de desercion universitaria</h3>
+                        <p>Desarrollo de machine learning de la desercion de estudiantes de una universidad de Lima</p>
+                        <a href="" class="btn btn-secondary">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-section bg-light-beige">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <p>¿Listo para llevar tu negocio al siguiente nivel? ¡Conversemos!</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Tu mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div  class="footer-content">
+                <div class="footer-logo">
+                 BitTec Soluciones
+            </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="social-media">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2025 BitTec Soluciones. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
